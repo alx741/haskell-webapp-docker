@@ -1,0 +1,30 @@
+# Use this image to run Yesod applications
+#
+# The Stack configuration should include:
+#
+#   image:
+#       container:
+#           base: yesod-postgresql-run
+#           add:
+#               static: /opt/app/static
+#               config: /opt/app/config
+#           entrypoints:
+#               - <app-executable-name>
+#
+# Execute a container with (for DBMS in the host system):
+#
+#   $ docker run --net="host" -e STATIC_DIR="/opt/app/static" -p 3000:3000 archquick-archquick
+
+FROM centos:7
+
+RUN    yum -y update \
+    && yum -y install \
+            make gcc gmp gmp-devel libpng-devel zlib-devel expat-devel \
+            gd-devel fontconfig-devel freetype-devel openjpeg-devel    \
+            postgresql-devel \
+    && yum -y clean all
+
+WORKDIR /opt/app
+EXPOSE 3000
+
+# vim: ft=dockerfile

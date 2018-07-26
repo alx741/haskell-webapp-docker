@@ -1,0 +1,20 @@
+# Use this image to build Yesod applications
+#
+# The Stack configuration should include:
+#
+#   docker:
+#       enable: false  # run `stack build --docker`
+#       image: alx741/yesod-postgresql-build
+#       stack-exe: image
+
+FROM centos:7
+
+RUN    yum -y update \
+    && yum -y install \
+            make gcc gmp gmp-devel libpng-devel zlib-devel expat-devel \
+            gd-devel fontconfig-devel freetype-devel openjpeg-devel    \
+            postgresql-devel \
+    && yum -y clean all \
+    && curl -sSL https://get.haskellstack.org/ | sh
+
+# vim: ft=dockerfile
