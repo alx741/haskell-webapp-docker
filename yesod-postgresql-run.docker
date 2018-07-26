@@ -19,9 +19,7 @@ FROM centos:7
 
 RUN    yum -y update \
     && yum -y install \
-            make gcc gmp gmp-devel libpng-devel zlib-devel expat-devel \
-            gd-devel fontconfig-devel freetype-devel openjpeg-devel    \
-            postgresql-devel \
+        gmp libpng zlib expat gd fontconfig freetype openjpeg postgresql-devel \
     && yum -y clean all
 
 WORKDIR /opt/app
