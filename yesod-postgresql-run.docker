@@ -20,6 +20,7 @@ FROM centos:7
 RUN    yum -y update \
     && yum -y install \
         gmp libpng zlib expat gd fontconfig freetype openjpeg postgresql-devel \
+        sendmail ImageMagick \
     && yum -y clean all
 
 WORKDIR /opt/app
