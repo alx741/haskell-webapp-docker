@@ -1,5 +1,8 @@
 # Use this image to run Haskell web applications
 #
+# It doesn't contain any compiler or build dependency, just what is needed to
+# run the application and therefore lightweight.
+#
 # The Stack configuration should include:
 #
 #   image:
@@ -11,9 +14,13 @@
 #           entrypoints:
 #               - <app-executable-name>
 #
-# Execute a container with (for DBMS in the host system):
+# * Execute a container with (assuming the DBMS runs in the same host):
 #
-#   $ docker run --net="host" -e STATIC_DIR="/opt/app/static" -p 3000:3000 archquick-archquick
+#     $ docker run --net="host" -p 3000:3000 execname-execname
+#
+# * For Yesod apps, pass the static dir path as an env variable:
+#
+#     $ docker run --net="host" -e STATIC_DIR="/opt/app/static" -p 3000:3000 execname-execname
 
 FROM centos:7
 

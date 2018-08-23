@@ -1,5 +1,9 @@
 # Use this image to build Haskell web applications
 #
+# It contains Stack, and all necessary system libraries/binaries for compiling.
+# The right GHC's version gets installed by Stack according to the project's
+# LTS.
+#
 # The Stack configuration should include:
 #
 #   docker:
