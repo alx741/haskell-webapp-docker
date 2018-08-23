@@ -1,4 +1,4 @@
-# Use this image to build Yesod applications
+# Use this image to build Haskell web applications
 #
 # The Stack configuration should include:
 #

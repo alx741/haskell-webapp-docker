@@ -1,9 +1,9 @@
 build-image:
-	docker build -t alx741/yesod-postgresql-build -f yesod-postgresql-build.docker .
+	docker build -t alx741/haskell-webapp-build -f haskell-webapp-build.docker .
 
 run-image:
-	docker build -t alx741/yesod-postgresql-run -f yesod-postgresql-run.docker .
+	docker build -t alx741/haskell-webapp-run -f haskell-webapp-run.docker .
 
 deploy: build-image run-image
-	docker push alx741/yesod-postgresql-build
-	docker push alx741/yesod-postgresql-run
+	docker push alx741/haskell-webapp-build
+	docker push alx741/haskell-webapp-run
