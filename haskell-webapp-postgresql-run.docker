@@ -24,6 +24,10 @@
 
 FROM centos:7
 
+ENV LANG     en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL   en_US.UTF-8
+
 RUN    yum -y update \
     && yum -y install \
         gmp libpng zlib expat gd fontconfig freetype openjpeg postgresql-devel \
