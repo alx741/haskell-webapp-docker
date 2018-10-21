@@ -23,6 +23,7 @@ RUN    yum -y update \
             gd-devel fontconfig-devel freetype-devel openjpeg-devel    \
             postgresql-devel \
     && yum -y clean all \
-    && curl -sSL https://get.haskellstack.org/ | sh
+    && curl -sSL https://get.haskellstack.org/ | sh \
+    && stack upgrade
 
 # vim: ft=dockerfile
